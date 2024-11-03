@@ -46,3 +46,9 @@ def get_path(predecessors, start, goal):
     path.append(start)
     path.reverse()
     return path
+
+
+if __name__ == "__main__":
+    maze = read_maze(".././02_03_challenge/mazes/challenge_maze.txt")
+    for row in range(len(maze)):
+        print(maze[row])
