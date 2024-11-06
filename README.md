@@ -1,7 +1,7 @@
 # PythonDataStructuresAlgorithms
 ***I will document some of my DataStructures taken notes here.***
 
-**Trees**
+# Trees
 - trees are used to store information.
 - tree is usually upside down.
 - each circle is called a node or a vertex.
@@ -12,7 +12,7 @@
 
 - from the above tree, we deduce the following. . .
 - the edge is the distance (connection) between 2 nodes, node 5 has no edge with node 4
-- tree with n nodes has n - 1 edges, source : https://www.cs.purdue.edu/homes/spa/courses/sa12/mod8.pdf
+- [Tree with n nodes has n - 1 edges](https://www.cs.purdue.edu/homes/spa/courses/sa12/mod8.pdf)
 - the tree has 4 levels, levels (0,1,2,3)
 - Node(1) has 2 children: 2 and 3
 - The parent of Node(7) is node(2)
@@ -31,6 +31,26 @@
 **Sub Trees**
 - recursive nature where each tree has a subtree and each subtree has another subtree.
 - Problem solving tip: we deduce that when we want to get the elements of a tree, we will do this recursively.
+
+
+# Binary Trees
+- a tree where each node at least has at most 2 children (left and right nodes).
+- a leaf node is a node with no children.
+
+**this is a simple tree (a node has many children)**
+![image](https://github.com/user-attachments/assets/896209b1-7bba-4d07-bdcd-c1a92d3d5433)
+
+
+**this is a binary tree (each node has at most 2 children)**
+![image](https://github.com/user-attachments/assets/61f26fc1-cb60-4e11-9841-9947f31100fe)
+
+
+
+-- A linked List is a special case of a binary tree.
+
+
+
+
 
 
 
