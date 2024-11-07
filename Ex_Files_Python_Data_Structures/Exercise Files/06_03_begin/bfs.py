@@ -33,6 +33,7 @@ if __name__ == "__main__":
     start_pos = (0, 0)
     goal_pos = (2, 2)
     result = bfs(maze, start_pos, goal_pos)
+    print(result)
     assert result == [(0, 0), (0, 1), (0, 2), (1, 2), (2, 2)]
 
     # Test 2
@@ -42,6 +43,7 @@ if __name__ == "__main__":
     start_pos = (0, 0)
     goal_pos = (2, 2)
     result = bfs(maze, start_pos, goal_pos)
+    print(result)
     assert result == [(0, 0), (1, 0), (1, 1), (1, 2), (2, 2)]
 
     # Test 3
@@ -49,4 +51,5 @@ if __name__ == "__main__":
     start_pos = (0, 0)
     goal_pos = (3, 3)
     result = bfs(maze, start_pos, goal_pos)
+    print(result)
     assert result is None
