@@ -37,12 +37,12 @@ def is_legal_pos(maze, pos):
     return 0 <= i < num_rows and 0 <= j < num_cols and maze[i][j] != "*"
 
 
-def get_path(predecessors, start, goal):
-    current = goal
+def get_path(predecessors, start, goal): # used for backtracking the path from the goal to the start
+    current = goal # start from the goal cell and then backtrack (work backwards)
     path = []
     while current != start:
         path.append(current)
-        current = predecessors[current]
+        current = predecessors[current] # predecessor is the 'parent' till current reaches start pos
     path.append(start)
-    path.reverse()
+    path.reverse() # reversing the list to get the right path
     return path
