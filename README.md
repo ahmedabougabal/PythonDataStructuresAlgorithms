@@ -1,5 +1,16 @@
 # PythonDataStructuresAlgorithms
+
+
 ***I will document some of my DataStructures taken notes here.***
+
+ [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+[![Project Status](https://img.shields.io/badge/status-Still%20in%20Progress-yellow)](https://github.com/yourusername/mernStackMilestoneProject_ITI)
+![Binary Tree](https://img.shields.io/badge/Data%20Structure-Binary%20Tree-blue)
+![Linked List](https://img.shields.io/badge/Data%20Structure-Linked%20List-brightgreen)
+
+
+![Profile Views](https://komarev.com/ghpvc/?username=ahmedabougabal&color=brightgreen)
+
 
 # Trees
 - trees are used to store information.
@@ -18,7 +29,7 @@
 - The parent of Node(7) is node(2)
 - Nodes {5, 9} are siblings (brothers)
 - height (specific to each node) represents the number of edges on the longest downward path between a node(vertex) and a leaf.
-- Tree of N levels has N-1 heights, since that the tree above has 4 levels, then the height is 4-1 = 3 edges 
+- Tree of N levels has N-1 heights, since that the tree above has 4 levels, then the height is 4-1 = 3 edges
 - the height of the node 1 (root) is 3 (start from the root to the longest path downward to the farest leaf)
 - node 7 has a height = 0
 - Node's Depth : the number of edges from the node to the root node.
@@ -49,10 +60,18 @@
 -- A linked List is a special case of a binary tree.
 
 
+---
+
+<div align="center" style="background-color: #f9f9f9; padding: 15px; border-radius: 10px; border: 1px solid #e1e4e8;">
+  <h3>⚠️ Heads Up!</h3>
+  <p><strong>This ReadMe is under constant updates.</strong></p>
+  <p>Stay tuned for new notes, revisions, and insights as I continue building this repository. 📚💡</p>
+</div>
+
+---
 
 
 
+# Acknowledgments
+> Thanks to Dr.Moustafa Saad, Nidal Fikri
 
-
-# Acknowledgments 
-> Thanks to Dr.Moustafa Saad, Nidal Fikri 
