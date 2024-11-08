@@ -46,3 +46,10 @@ def get_path(predecessors, start, goal): # used for backtracking the path from t
     path.append(start)
     path.reverse() # reversing the list to get the right path
     return path
+
+
+# adding tests
+if __name__ == "__main__":
+  file_path = "./mazes/challenge_maze.txt"
+  maze = read_maze(file_path)
+  print(maze)
