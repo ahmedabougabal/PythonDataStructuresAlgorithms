@@ -6,7 +6,7 @@ Robin Andrews - https://compucademy.net/
 
 import heapq
 
-
+# min heap implementation (smaller numbers have higher priority)
 class PriorityQueue:
     def __init__(self):
         self.elements = []
@@ -16,15 +16,16 @@ class PriorityQueue:
 
     def put(self, item, priority): # push item into a PQ
         heapq.heappush(self.elements, (priority, item))
-        # lower priority numbers get up first
 
     def get(self):
-        return heapq.heappop(self.elements)[1]
+        return heapq.heappop(self.elements)[1] # select the number to remove from the tuple
+        # lower priority numbers are to be removed first (1 before 2 before 3)
     
     def __str__(self):
         return str(self.elements)
 
 
+# lower numbers --> high priority task as in task scheduling (sys monitor)
 if __name__ == "__main__":
     pq = PriorityQueue()
     # print(pq)
@@ -35,6 +36,6 @@ if __name__ == "__main__":
     # print(pq.is_empty())
     
     print(pq)
-    print(pq.get())
+    print(pq.get()) # removed 'code' from pq
     print(pq)
 
