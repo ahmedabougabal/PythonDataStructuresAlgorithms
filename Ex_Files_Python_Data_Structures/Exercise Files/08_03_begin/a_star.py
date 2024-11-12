@@ -10,6 +10,30 @@ from helpers import get_path, offsets, is_legal_pos, read_maze
 from priority_queue import PriorityQueue
 
 
+'''
+#! some of my taken notes:
+
+F = G + H , WHERE f here is the total cost 
+G --> Cost from start to current node 
+H --> estimated cost from current node to goal (heuristic)
+
+Algo Implementation : 
+
+Priority Queue: [(cell, F-value which is the total cost)] --> stores (position and f-score) tuples
+G-scores dictionary - stores the value of blocks (cells) from start to current node 
+H-scores : Manhattan distance to goals
+predecessors dict : for path reconstruction
+Get highest priority item from PQ (min F-Value): ....
+Is it the goal?
+If so, we are done
+Otherwise:
+put undiscovered neighbours,
+calculate f-values
+update predecessors
+Repeat until queue is empty
+
+'''
+
 def heuristic(a, b):
     """
     Calculates the Manhattan distance between two pairs of grid coordinates.
@@ -20,7 +44,49 @@ def heuristic(a, b):
 
 
 def a_star(maze, start, goal):
-    pass
+    pq = PriorityQueue()
+    g_score = {}
+    predecessors = {}
+
+    # start position 
+    g_score[start] = 0
+    h_score = heuristic(start, goal)
+    f_score = g_score[start] + h_score
+    pq.put(start, f_score) # this is like the (item, priority)
+    predecessors[start] = None
+
+    while not pq.is_empty():
+        # get the node with the lowest f score 
+        current_pos  = pq.get() # since a pq has tuples of (priority , element) inside a list
+
+        # check if we reached the goal
+        if current_pos == goal:
+            return get_path(predecessors, start, goal)
+        
+        # else , we explore the neighbours
+        for direction in offsets.values():
+            neighbour = (current_pos[0]+direction[0], current_pos[1] + direction[1])
+
+            # skip the neighbour if it is blocked or invalid
+            if not is_legal_pos(maze, neighbour):
+                continue
+
+            # calculate g score (cost from start to current node)
+            g_value = g_score[current_pos] + 1
+
+            # found better path to neighbour 
+            if neighbour not in g_score or g_value < g_score[neighbour]:
+                g_score[neighbour] = g_value
+                h_score = heuristic(neighbour,goal)
+                f_score = g_value + h_score
+
+                # add to queue and update the predecessors
+                pq.put(neighbour, f_score)
+                predecessors[neighbour] = current_pos
+    #No path is found
+    return None
+
+
 
 
 if __name__ == "__main__":
