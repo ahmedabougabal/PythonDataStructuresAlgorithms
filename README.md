@@ -65,7 +65,7 @@
 <div align="center" style="background-color: #f9f9f9; padding: 15px; border-radius: 10px; border: 1px solid #e1e4e8;">
   <h3>⚠️ Heads Up!</h3>
   <p><strong>This ReadMe is under constant updates.</strong></p>
-  <p>Stay tuned for new notes, revisions, and insights as I continue building this repository. 📚💡</p>
+  <p>Stay tuned for new notes as I progress. . . 📚💡</p>
 </div>
 
 ---
