@@ -17,7 +17,7 @@ def is_legal_pos(maze, pos):
   x,y = pos
   x_rows= len(maze)
   y_cols = len(maze[0])
-  return 0 < x <= x_rows and 0 < y <=y_cols and maze[x][y] != "0"
+  return 0 <= x < x_rows and 0 <= y < y_cols and maze[x][y] != "0"
 
 
 def get_path(predecessor, start, goal):
