@@ -10,6 +10,20 @@
 
 ![Profile Views](https://komarev.com/ghpvc/?username=ahmedabougabal&color=brightgreen)
 
+
+# checkout the DSA MindMaps i just added :)
+
+**_Mind map 1_**
+![image](https://github.com/user-attachments/assets/b7297d5c-543b-42d7-8cb6-27ea21777e52)
+
+
+**_Mind map 2_**
+![image](https://github.com/user-attachments/assets/914f4463-0475-4b0d-bada-890ee8a81edc)
+
+
+
+
+
 # Trees
 
 - trees are used to store information.
