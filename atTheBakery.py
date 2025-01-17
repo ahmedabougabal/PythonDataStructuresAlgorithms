@@ -27,6 +27,19 @@ def build_menu(cakes):
     # flattened_list = [i for sublist in my_list for i in sublist]
 
 
+# --------------------- another simpler approach 
+
+def build_menu(cakes):
+    # Your code goes here
+    cakes[105] = ['Coffee' , 1.49]
+    result =[]
+    for flavor , price in cakes.values():
+        result.append(f"{flavor} Cake - ${price}")
+        result.sort(reverse=True)
+    return result
+
+
+
 # This is how your code will be called.
 # Your answer should be a list of strings conforming to 
 # the instructions.
