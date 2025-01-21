@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # PythonDataStructuresAlgorithms
 
 **_I will document some of my DataStructures taken notes here, Stay Tuned..._**
@@ -10,19 +12,13 @@
 
 ![Profile Views](https://komarev.com/ghpvc/?username=ahmedabougabal&color=brightgreen)
 
-
 # checkout the DSA MindMaps i just added :)
 
 **_Mind map 1_**
 ![image](https://github.com/user-attachments/assets/b7297d5c-543b-42d7-8cb6-27ea21777e52)
 
-
 **_Mind map 2_**
 ![image](https://github.com/user-attachments/assets/914f4463-0475-4b0d-bada-890ee8a81edc)
-
-
-
-
 
 # Trees
 
@@ -68,6 +64,95 @@
 ![image](https://github.com/user-attachments/assets/61f26fc1-cb60-4e11-9841-9947f31100fe)
 
 -- A linked List is a special case of a binary tree.
+
+# BFS Tree Structure explanation for the 'whatTasteIsItLike.py' question :
+
+**initial state**
+food_items
+│
+┌───────────┴───────────┐
+fruits vegetables
+
+Queue Box: ['fruits', 'vegetables']
+Current: []
+Processed: []
+
+---
+
+**step 1**
+
+                        food_items
+                            │
+                ┌───────────┴───────────┐
+              fruits ←             vegetables
+
+Queue Box: ['vegetables', 'tropical', 'temperate']
+Current: 'fruits'
+Processed: ['fruits']
+
+---
+
+**step 2**
+
+                        food_items
+                            │
+                ┌───────────┴───────────┐
+              fruits               vegetables ←
+                │                     │
+        ┌───────┴───────┐      ┌─────┴─────┐
+    tropical        temperate  leafy      root
+
+Queue Box: ['tropical', 'temperate', 'leafy', 'root']
+Current: 'vegetables'
+Processed: ['fruits', 'vegetables']
+
+---
+
+**step 3**
+
+                        food_items
+                            │
+                ┌───────────┴───────────┐
+              fruits               vegetables
+                │                     │
+        ┌───────┴───────┐      ┌─────┴─────┐
+    tropical ←      temperate  leafy      root
+        │
+    ┌───┴───┐
+
+mango pineapple
+
+Queue Box: ['temperate', 'leafy', 'root', 'mango', 'pineapple']
+Current: 'tropical'
+Processed: ['fruits', 'vegetables', 'tropical']
+
+---
+
+**and so on...**
+
+Logic :
+
+When processing 'apple':
+Queue Box: ['pear', 'spinach', 'kale', 'carrot', 'beet']
+Current: 'apple' (red found!)
+Processed: [..., 'apple']
+Result: ["The apple is sweet."]
+
+When processing 'beet':
+Queue Box: []
+Current: 'beet' (red found!)
+Processed: [..., 'apple', ..., 'beet']
+Result: ["The apple is sweet.", "The beet is earthy."]
+
+---
+
+The key movements:
+
+Item moves from Queue Box → Current Box
+After processing:
+Item moves to Processed Box
+If it has children, they're added to Queue Box
+If it's red, it adds to Result
 
 ---
 
