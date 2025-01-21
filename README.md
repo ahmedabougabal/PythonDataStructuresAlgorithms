@@ -68,13 +68,17 @@
 # BFS Tree Structure explanation for the 'whatTasteIsItLike.py' question :
 
 **initial state**
-food_items
-│
-┌───────────┴───────────┐
-fruits vegetables
+
+
+                        food_items
+                            │
+                ┌───────────┴───────────┐
+              fruits               vegetables
 
 Queue Box: ['fruits', 'vegetables']
+<br />
 Current: []
+<br />
 Processed: []
 
 ---
@@ -87,7 +91,9 @@ Processed: []
               fruits ←             vegetables
 
 Queue Box: ['vegetables', 'tropical', 'temperate']
+<br />
 Current: 'fruits'
+<br />
 Processed: ['fruits']
 
 ---
@@ -103,7 +109,9 @@ Processed: ['fruits']
     tropical        temperate  leafy      root
 
 Queue Box: ['tropical', 'temperate', 'leafy', 'root']
+<br />
 Current: 'vegetables'
+<br />
 Processed: ['fruits', 'vegetables']
 
 ---
@@ -123,7 +131,9 @@ Processed: ['fruits', 'vegetables']
 mango pineapple
 
 Queue Box: ['temperate', 'leafy', 'root', 'mango', 'pineapple']
+<br />
 Current: 'tropical'
+<br />
 Processed: ['fruits', 'vegetables', 'tropical']
 
 ---
@@ -133,15 +143,24 @@ Processed: ['fruits', 'vegetables', 'tropical']
 Logic :
 
 When processing 'apple':
+<br />
 Queue Box: ['pear', 'spinach', 'kale', 'carrot', 'beet']
-Current: 'apple' (red found!)
+<br />
+Current: 'apple' (red found!) , since apple is a dict instance and has 'color' in one of its keys... 
+<br />
 Processed: [..., 'apple']
+<br />
 Result: ["The apple is sweet."]
 
+<br />
 When processing 'beet':
+<br />
 Queue Box: []
-Current: 'beet' (red found!)
+<br />
+Current: 'beet' (red found!) , since beet is a dict instance and has 'color' in one of its keys... 
+<br />
 Processed: [..., 'apple', ..., 'beet']
+<br />
 Result: ["The apple is sweet.", "The beet is earthy."]
 
 ---
@@ -149,10 +168,36 @@ Result: ["The apple is sweet.", "The beet is earthy."]
 The key movements:
 
 Item moves from Queue Box → Current Box
+<br />
 After processing:
+<br />
 Item moves to Processed Box
+<br />
 If it has children, they're added to Queue Box
+<br />
 If it's red, it adds to Result
+---
+further explanation : 
+
+So when we say "red found!", we mean:
+
+- val is a dictionary (passed isinstance check)
+<br />
+
+- val has a 'color' key (passed 'color' in val check)
+<br />
+
+- val['color'] equals 'red' (passed color comparison)
+
+<br />
+
+- This is different from nodes like 'fruits' or 'temperate' which:
+
+-- Are dictionaries but don't have a 'color' key
+<br />
+-- Have nested dictionaries instead of direct properties
+
+
 
 ---
 
